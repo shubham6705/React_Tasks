@@ -1,0 +1,40 @@
+import './App.css';
+import {useState} from "react";
+  
+function App() {
+
+  const [inputList, setInputList]= useState("kjkj");
+  const [Items, setItems]= useState([]);
+  const addItem = (event) => {
+    setInputList(event.target.value);
+
+  };
+
+  const listItem=()=> {
+    setItems((oldItems)=>{
+      return [...oldItems, inputList];
+    });
+  };
+  return (
+    <>
+      <div className='main_div'>
+        <div className="center_div">
+          <br />
+          <h1>ToDo List</h1>
+          <br />
+          <input type="text" placeholder="Add Item" onChange={addItem} value={inputList} />
+          <button onClick={listItem}>Add+</button>
+
+          <ol>
+           {
+             Items.map( (itemval) => {
+              return <li>{itemval}</li>;
+            })
+           } 
+          </ol>
+        </div>
+      </div>
+    </>
+  )
+}
+export default App;
