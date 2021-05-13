@@ -1,0 +1,56 @@
+
+    // Question 1.
+       const arr=[1,2,3,4,5,5];
+       for(let i=0;i<arr.length;i++)
+       {
+           if(arr[i]%2==0)
+           {
+               console.log(arr[i]);
+           }
+       }
+       
+       
+__________________________________________________________________________________________________________________________________________       
+// Question 2
+       const bits=[0,0,1,1,0,0,1,1,1,1,0,1,1,0,1,1,1,0];
+       var count=0;
+       var res=0;
+
+       function max(val1,val2)
+       {
+           if(val1>val2)
+           {
+               return val1;
+           }
+           else
+           {
+               return val2;
+           }
+       }
+       for(let i=0;i<bits.length;i++)
+       {
+           if(bits[i]==0)
+           {
+               count=0;
+           }
+            else
+            {
+                count++;
+                res=max(res, count);
+            }   
+       }
+       console.log(res);
+__________________________________________________________________________________________________________
+       //Question 3
+       const conseArr=[1,2,3,4,5,5,6];
+       var count=0;
+       for(let i=0;i<conseArr.length;i++)
+       {
+           for(let j=i+1;j<conseArr.length;j++)
+           {
+               if(conseArr[i]==conseArr[j])
+               {
+                    console.log(conseArr[i]);  
+               }
+           }
+       }
